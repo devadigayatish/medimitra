@@ -1,9 +1,0 @@
-#include<stdio.h>
-#include<conio.h>
-void main()
-{
-char c[1000]='AbcD';
-char c1[1000]' ';
-c1=strlwr(c);
-printf("%s",c1);
-}
