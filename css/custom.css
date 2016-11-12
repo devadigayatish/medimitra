@@ -158,22 +158,22 @@ footer a {
     line-height: normal;
 }
 /*refer doctor*/
-header.referdoctor {
+header.suggestdoctor {
     min-height: 100%;
 }
-header.referdoctor{
-    background-image: url("../img/referdoctorheader.jpg");
+header.suggestdoctor{
+    background-image: url("../img/suggestdoctorheader.jpg");
     background-position: center center;
     background-size: cover;
     color: #fff;
     min-height: auto;
 }
-header.referdoctor, header.referdoctor .header-content {
+header.suggestdoctor, header.suggestdoctor .header-content {
     position: relative;
     text-align: center;
     width: 100%;
 }
-header.referdoctor .header-content{
+header.suggestdoctor .header-content{
 	transform: none;
 
 }
@@ -197,6 +197,7 @@ margin-left: -45px;
 	margin-top: 0px;
 	 font-size: 20px;
     margin-left: -20px;
+    color: #000000;
     
 }
 .degreename{
@@ -209,7 +210,7 @@ margin-left: -45px;
 background-color: rgb(241, 241, 241);
 }
 .bg{
-background-color: rgba(23, 22, 22, 0.12);
+background-color: #fff;
 }
 .bg-gray{
     background-color: rgb(241, 241, 241);
@@ -234,4 +235,7 @@ color: #000;
 }
 .navbar-default .navbar-header .navbar-brand:focus, .navbar-default .navbar-header .navbar-brand:hover{
     color: #ee4b28;
+}
+.padding25{
+    padding: 25px 0px;
 }
