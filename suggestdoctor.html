@@ -166,7 +166,7 @@ Doctor's information <hr class="big_dark">
 
 
 Your information <hr class="big_dark">
-<fieldset>
+
 
 
 <!-- Text input-->
@@ -263,35 +263,38 @@ Your information <hr class="big_dark">
 </div>
 
 
-<!-- Text area -->
-  
-<div class="form-group">
-  <label class="col-md-5 control-label">Please share the experience you have had with the Doctor</label>
-    <div class="col-md-7 inputGroupContainer">
-    <div class="input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
-            <textarea class="form-control" name="comment" placeholder="Message"></textarea>
-  </div>
-  <p class="small smallnote">Try to share as much detail and examples possible here, it will help the cause</p>
-  </div>
-</div>
 
+Please share the experience you have had with the doctor - <hr class="big_dark">
 
 
 <div class="form-group">
-<label class="col-md-5 control-label">Does he gives sufficient time to patients, especially during the first consultation?</label>
-    <div class="col-md-7 inputGroupContainer">
+<label class="col-md-4 control-label">A) Overall Level of satisfaction</label>
+    <div class="col-md-8 inputGroupContainer">
     <div class="input-group">
-    <!-- <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span> -->
     
     <label class="radio-inline">
-    <input name="sufficienttime" value="1" type="radio">
-    Yes
+    <input name="satisfaction" value="0" type="radio">
+    Very dissatisfied
     </label>
 
     <label class="radio-inline">
-    <input name="sufficienttime" value="0" checked="checked" type="radio">
-    No
+    <input name="satisfaction" value="0" checked="checked" type="radio">
+    Dissatisfied
+    </label>
+
+    <label class="radio-inline">
+    <input name="satisfaction" value="0" checked="checked" type="radio">
+    Less satisfied
+    </label>
+
+    <label class="radio-inline">
+    <input name="satisfaction" value="0" checked="checked" type="radio">
+    Satisfied
+    </label>
+
+    <label class="radio-inline">
+    <input name="satisfaction" value="1" checked="checked" type="radio">
+    Very happy
     </label>
 
     </div>
@@ -300,19 +303,69 @@ Your information <hr class="big_dark">
 
 
 <div class="form-group">
-<label class="col-md-5 control-label">Does he answers reasonable queries and doubts of the patients?</label>
-    <div class="col-md-7 inputGroupContainer">
+<label class="col-md-4 control-label">B) Time given by the doctor</label>
+    <div class="col-md-8 inputGroupContainer">
     <div class="input-group">
-    <!-- <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span> -->
     
     <label class="radio-inline">
-    <input name="reasonableanswer" value="1" type="radio">
-    Yes
+    <input name="timegiven" value="0" type="radio">
+    Very dissatisfied
     </label>
 
     <label class="radio-inline">
-    <input name="reasonableanswer" value="0" checked="checked" type="radio">
-    No
+    <input name="timegiven" value="0" checked="checked" type="radio">
+    Dissatisfied
+    </label>
+
+    <label class="radio-inline">
+    <input name="timegiven" value="0" checked="checked" type="radio">
+    Less satisfied
+    </label>
+
+    <label class="radio-inline">
+    <input name="timegiven" value="0" checked="checked" type="radio">
+    Satisfied
+    </label>
+
+    <label class="radio-inline">
+    <input name="timegiven" value="1" checked="checked" type="radio">
+    Very happy
+    </label>
+
+    </div>
+  </div>
+</div>
+
+
+
+<div class="form-group">
+<label class="col-md-4 control-label">C) Doctor listening to and answering your queries</label>
+    <div class="col-md-8 inputGroupContainer">
+    <div class="input-group">
+    
+    <label class="radio-inline">
+    <input name="listeninganswering" value="0" type="radio">
+    Very dissatisfied
+    </label>
+
+    <label class="radio-inline">
+    <input name="listeninganswering" value="0" checked="checked" type="radio">
+    Dissatisfied
+    </label>
+
+    <label class="radio-inline">
+    <input name="listeninganswering" value="0" checked="checked" type="radio">
+    Less satisfied
+    </label>
+
+    <label class="radio-inline">
+    <input name="listeninganswering" value="0" checked="checked" type="radio">
+    Satisfied
+    </label>
+
+    <label class="radio-inline">
+    <input name="listeninganswering" value="1" checked="checked" type="radio">
+    Very happy
     </label>
 
     </div>
@@ -321,18 +374,54 @@ Your information <hr class="big_dark">
 
 
 <div class="form-group">
-<label class="col-md-5 control-label">Does he has transparency regarding fees and charges?</label>
-    <div class="col-md-7 inputGroupContainer">
+<label class="col-md-4 control-label">D) Information received about illness and treatment</label>
+    <div class="col-md-8 inputGroupContainer">
     <div class="input-group">
-    <!-- <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span> -->
     
     <label class="radio-inline">
-    <input name="feestransparency" value="1" type="radio">
+    <input name="receivedinformation" value="0" type="radio">
+    Very dissatisfied
+    </label>
+
+    <label class="radio-inline">
+    <input name="receivedinformation" value="0" checked="checked" type="radio">
+    Dissatisfied
+    </label>
+
+    <label class="radio-inline">
+    <input name="receivedinformation" value="0" checked="checked" type="radio">
+    Less satisfied
+    </label>
+
+    <label class="radio-inline">
+    <input name="receivedinformation" value="0" checked="checked" type="radio">
+    Satisfied
+    </label>
+
+    <label class="radio-inline">
+    <input name="receivedinformation" value="1" checked="checked" type="radio">
+    Very happy
+    </label>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="form-group">
+<label class="col-md-4 control-label">E) Did the doctor insist on purchase of drugs from a particular store?</label>
+    <div class="col-md-8 inputGroupContainer">
+    <div class="input-group">
+    
+    <label class="radio-inline">
+    <input name="particularstore" value="0" type="radio">
     Yes
     </label>
 
     <label class="radio-inline">
-    <input name="feestransparency" value="0" checked="checked" type="radio">
+    <input name="particularstore" value="1" checked="checked" type="radio">
     No
     </label>
 
@@ -341,12 +430,230 @@ Your information <hr class="big_dark">
 </div>
 
 
+
+
+<div class="form-group">
+<label class="col-md-4 control-label">Procedure or admission done?</label>
+    <div class="col-md-8 inputGroupContainer">
+    <div class="input-group">
+    
+    <label class="radio-inline">
+    <input name="procedureadmission" value="0" type="radio" id="yesprocedureadmissiondone">
+    Yes
+    </label>
+
+    <label class="radio-inline">
+    <input name="procedureadmission" value="1" checked="checked" type="radio" id="noprocedureadmissiondone">
+    No
+    </label>
+
+    </div>
+  </div>
+</div>
+
+<div class="procedureadmissiondone">
+<div class="form-group">
+<label class="col-md-4 control-label"></label>
+    <div class="col-md-8 inputGroupContainer">
+    <div class="input-group">
+  If yes, please give feedback on the following :    
+    </div>
+  </div>
+</div>
+
+
+
+
+<hr class="big_darkgray">
+
+
+<div class="form-group">
+<label class="col-md-4 control-label">1. Accessibility of the main doctor</label>
+    <div class="col-md-8 inputGroupContainer">
+    <div class="input-group">
+    
+    <label class="radio-inline">
+    <input name="accessibility" value="0" type="radio">
+    Very dissatisfied
+    </label>
+
+    <label class="radio-inline">
+    <input name="accessibility" value="0" checked="checked" type="radio">
+    Dissatisfied
+    </label>
+
+    <label class="radio-inline">
+    <input name="accessibility" value="0" checked="checked" type="radio">
+    Less satisfied
+    </label>
+
+    <label class="radio-inline">
+    <input name="accessibility" value="0" checked="checked" type="radio">
+    Satisfied
+    </label>
+
+    <label class="radio-inline">
+    <input name="accessibility" value="1" checked="checked" type="radio">
+    Very happy
+    </label>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="form-group">
+<label class="col-md-4 control-label">2. Experience about the assistant doctors</label>
+    <div class="col-md-8 inputGroupContainer">
+    <div class="input-group">
+    
+    <label class="radio-inline">
+    <input name="assistantexperience" value="0" type="radio">
+    Very dissatisfied
+    </label>
+
+    <label class="radio-inline">
+    <input name="assistantexperience" value="0" checked="checked" type="radio">
+    Dissatisfied
+    </label>
+
+    <label class="radio-inline">
+    <input name="assistantexperience" value="0" checked="checked" type="radio">
+    Less satisfied
+    </label>
+
+    <label class="radio-inline">
+    <input name="assistantexperience" value="0" checked="checked" type="radio">
+    Satisfied
+    </label>
+
+    <label class="radio-inline">
+    <input name="assistantexperience" value="1" checked="checked" type="radio">
+    Very happy
+    </label>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="form-group">
+<label class="col-md-4 control-label">3. Experience about the nurses and other staff</label>
+    <div class="col-md-8 inputGroupContainer">
+    <div class="input-group">
+    
+    <label class="radio-inline">
+    <input name="nursesexperience" value="0" type="radio">
+    Very dissatisfied
+    </label>
+
+    <label class="radio-inline">
+    <input name="nursesexperience" value="0" checked="checked" type="radio">
+    Dissatisfied
+    </label>
+
+    <label class="radio-inline">
+    <input name="nursesexperience" value="0" checked="checked" type="radio">
+    Less satisfied
+    </label>
+
+    <label class="radio-inline">
+    <input name="nursesexperience" value="0" checked="checked" type="radio">
+    Satisfied
+    </label>
+
+    <label class="radio-inline">
+    <input name="nursesexperience" value="1" checked="checked" type="radio">
+    Very happy
+    </label>
+
+    </div>
+  </div>
+</div>
+
+
+
+<div class="form-group">
+<label class="col-md-4 control-label">4. Overall cleanliness</label>
+    <div class="col-md-8 inputGroupContainer">
+    <div class="input-group">
+    
+    <label class="radio-inline">
+    <input name="cleanliness" value="0" type="radio">
+    Very dissatisfied
+    </label>
+
+    <label class="radio-inline">
+    <input name="cleanliness" value="0" checked="checked" type="radio">
+    Dissatisfied
+    </label>
+
+    <label class="radio-inline">
+    <input name="cleanliness" value="0" checked="checked" type="radio">
+    Less satisfied
+    </label>
+
+    <label class="radio-inline">
+    <input name="cleanliness" value="0" checked="checked" type="radio">
+    Satisfied
+    </label>
+
+    <label class="radio-inline">
+    <input name="cleanliness" value="1" checked="checked" type="radio">
+    Very happy
+    </label>
+
+    </div>
+  </div>
+</div>
+
+
+
+<div class="form-group">
+<label class="col-md-4 control-label">5. Hospital charges</label>
+    <div class="col-md-8 inputGroupContainer">
+    <div class="input-group">
+    
+    <label class="radio-inline">
+    <input name="hospitalcharges" value="0" type="radio">
+    Very dissatisfied
+    </label>
+
+    <label class="radio-inline">
+    <input name="hospitalcharges" value="0" checked="checked" type="radio">
+    Dissatisfied
+    </label>
+
+    <label class="radio-inline">
+    <input name="hospitalcharges" value="0" checked="checked" type="radio">
+    Less satisfied
+    </label>
+
+    <label class="radio-inline">
+    <input name="hospitalcharges" value="0" checked="checked" type="radio">
+    Satisfied
+    </label>
+
+    <label class="radio-inline">
+    <input name="hospitalcharges" value="1" checked="checked" type="radio">
+    Very happy
+    </label>
+
+    </div>
+  </div>
+</div>
+
+
+</div>
 
 
 <!-- Success message -->
 <!-- <div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i> Thanks for contacting us, we will get back to you shortly.</div>
  -->
 <!-- Button -->
+<br>
 <div class="form-group">
   <label class="col-md-5 control-label"></label>
   <div class="col-md-7">
@@ -430,6 +737,15 @@ Your information <hr class="big_dark">
         });
         $('#nodoctor').click(function(){
             $(".ifdoctor").fadeOut();
+        });
+
+
+
+        $('#yesprocedureadmissiondone').click(function(){
+            $(".procedureadmissiondone").fadeIn();
+        });
+        $('#noprocedureadmissiondone').click(function(){
+            $(".procedureadmissiondone").fadeOut();
         });
     </script>
 

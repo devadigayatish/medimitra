@@ -64,6 +64,10 @@ border-color: #f05f40;
 .big_dark{
 	max-width: 100%;
 }
+hr.big_darkgray{
+    border-color: #d0d0d0;
+    max-width: 100%;
+}
 .footer-bottom{
 	background-color: #222;
     color: #fff;
@@ -238,4 +242,7 @@ color: #000;
 }
 .padding25{
     padding: 25px 0px;
+}
+.procedureadmissiondone{
+    display: none;
 }
