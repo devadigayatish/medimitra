@@ -1348,7 +1348,7 @@ if ( ! class_exists( 'SearchAndFilter' ) )
 					'child_of' => 0,
 					'echo' => false,
 					'hide_if_empty' => false,
-					'hide_empty' => true,
+					'hide_empty' => false,
 					'order' => $order_dir[$i],
 					'orderby' => $order_by[$i],
 					'show_option_none' => '',

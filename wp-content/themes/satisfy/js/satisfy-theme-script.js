@@ -123,4 +123,9 @@ jQuery(function ( $ ) {
         $('#noprocedureadmissiondone').on( 'click', function () {
             $(".procedureadmissiondone").hide();
         });
+
+    $( '#disable-alert' ).on( 'click', function () {
+        alert("Currently serach engine is disabled");
+    });
+        
 });
