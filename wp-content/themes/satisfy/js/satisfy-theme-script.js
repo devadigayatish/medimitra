@@ -84,6 +84,11 @@ jQuery(function ( $ ) {
         anim_scroll( $( '.cover-img' ).height() - ('absolute' === header.css( 'position' ) ? 0 : header.height()) );
     });
 
+
+
+
+
+
     // Scroll to top button
     if ( scroll_btn.length ) {
         $( window ).on( 'scroll', function () {
@@ -102,4 +107,20 @@ jQuery(function ( $ ) {
             anim_scroll( 0 );
         });
     }
+
+
+    $( '#yesdoctor' ).on( 'click', function () {
+        $(".ifdoctor").show();
+    });
+
+        $( '#nodoctor' ).on( 'click', function () {
+        $(".ifdoctor").hide();
+    });
+
+        $('#yesprocedureadmissiondone').on( 'click', function () {
+            $(".procedureadmissiondone").show();
+        });
+        $('#noprocedureadmissiondone').on( 'click', function () {
+            $(".procedureadmissiondone").hide();
+        });
 });

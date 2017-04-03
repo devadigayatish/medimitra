@@ -3,7 +3,7 @@
 /*
  * Index
  */
-satisfy_temp_option( 'sidebar', 'off' );
+//satisfy_temp_option( 'sidebar', 'off' );
 get_header();
 
 satisfy_blog_loop();

@@ -513,20 +513,20 @@ add_shortcode('doctor_form', 'medimitra_doctor_form');
 function medimitra_doctor_form_fields() {
  
     ob_start(); ?>  
-        <!-- <h3 class="medimitra_header"><?php _e('Suggest A Doctor'); ?></h3> -->
+        <!-- <h3 class="medimitra_header"><?php //_e('Suggest A Doctor'); ?></h3> -->
  
         <?php 
         // show any error messages after form submission
         medimitra_show_error_messages(); ?>
- 
+        <p><?php _e('Please suggest a patient-friendly rational, ethical doctor based on your experience with him/her. By suggesting a doctor with whom you had a good experience, you can help us to expand our network so that more patients benefit.'); ?></p>
         <form id="medimitra_doctor_form" class="medimitra_form" action="" method="POST">
             <fieldset>
                 <h4><?php _e('Doctor\'s information'); ?></h4>
                 <hr>
-                
-
+                                
+                    <!-- First name last name change  -->
                 <div class="form-group">
-                <label class="col-md-5 control-label" style="text-align:right;"><?php _e('Name'); ?></label>  
+                <label class="col-md-5 control-label" style="text-align:right;"><?php _e('First Name'); ?></label>  
                 <div class="col-md-7 inputGroupContainer">
                 <div class="input-group">
                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
@@ -536,12 +536,36 @@ function medimitra_doctor_form_fields() {
                 </div>
 
                 <div class="form-group">
-                <label class="col-md-5 control-label" style="text-align:right;"><?php _e('City'); ?></label>  
+                <label class="col-md-5 control-label" style="text-align:right;"><?php _e('Last Name'); ?></label>  
+                <div class="col-md-7 inputGroupContainer">
+                <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                <input name="medimitra_doctor_name" placeholder="Name" class="form-control" type="text" id="medimitra_doctor_name">
+                </div>
+                </div>
+                </div>
+                <!-- end -->
+
+
+                <!-- address change-->
+                <div class="form-group">
+                <label class="col-md-5 control-label" style="text-align:right;"><?php _e('Address'); ?></label>  
+                <div class="col-md-7 inputGroupContainer">
+                <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                <input name="medimitra_doctor_name" placeholder="Name" class="form-control" type="text" id="medimitra_doctor_name">
+                </div>
+                </div>
+                </div>
+                <!-- end -->
+
+                <div class="form-group">
+                <label class="col-md-5 control-label" style="text-align:right;"><?php _e('Area'); ?></label>  
                 <div class="col-md-7 inputGroupContainer">
                 <div class="input-group">
                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                 <!-- <input name="medimitra_area" placeholder="City" class="form-control" type="text" id="medimitra_area"> -->
-                <?php wp_dropdown_categories( 'tab_index=10&taxonomy=area&name=medimitra_area&class=medimitra_area&show_option_all=Select a Area' ); ?>
+                <?php wp_dropdown_categories( 'tab_index=0&hide_empty=0&taxonomy=area&name=medimitra_area&class=medimitra_area&show_option_all=Select a Area' ); ?>
                 </div>
                 </div>
                 </div>
@@ -552,25 +576,25 @@ function medimitra_doctor_form_fields() {
                 <div class="col-md-7 inputGroupContainer">
                 <div class="input-group">
                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                <?php wp_dropdown_categories( 'tab_index=10&taxonomy=speciality&name=medimitra_speciality&class=medimitra_speciality&show_option_all=Select a Speciality' ); ?>
+                <?php wp_dropdown_categories( 'tab_index=0&hide_empty=0&taxonomy=speciality&name=medimitra_speciality&class=medimitra_speciality&show_option_all=Select a Speciality' ); ?>
                 </div>
                 </div>
                 </div>
 
-
+<!-- replace education with qualification -->
                 <div class="form-group">
-                <label class="col-md-5 control-label" style="text-align:right;"><?php _e('Education'); ?></label>  
+                <label class="col-md-5 control-label" style="text-align:right;"><?php _e('Qualification'); ?></label>  
                 <div class="col-md-7 inputGroupContainer">
                 <div class="input-group">
                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                <input name="medimitra_doctor_education" placeholder="Education" class="form-control" type="text" id="medimitra_doctor_education">
+                <input name="medimitra_doctor_education" placeholder="Qualification" class="form-control" type="text" id="medimitra_doctor_education">
                 </div>
                 </div>
                 </div>
 
-
-                <div class="form-group">
-                <label class="col-md-5 control-label" style="text-align:right;"><?php _e('Experience'); ?></label>  
+<!-- experience n phone number is not in requirement doc -->
+<!--                 <div class="form-group">
+                <label class="col-md-5 control-label" style="text-align:right;"><?php // _e('Experience'); ?></label>  
                 <div class="col-md-7 inputGroupContainer">
                 <div class="input-group">
                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
@@ -580,40 +604,517 @@ function medimitra_doctor_form_fields() {
                 </div>
 
                 <div class="form-group">
-                <label class="col-md-5 control-label" style="text-align:right;"><?php _e('Phone Number'); ?></label>  
+                <label class="col-md-5 control-label" style="text-align:right;"><?php //_e('Phone Number'); ?></label>  
                 <div class="col-md-7 inputGroupContainer">
                 <div class="input-group">
                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                 <input name="medimitra_doctor_phone" placeholder="Enter phone number" class="form-control" type="text" id="medimitra_doctor_phone">
                 </div>
                 </div>
-                </div><hr>
+                </div> -->
+<!-- end -->
+
+                <hr>
 
 
-<h4><?php _e('Your information'); ?></h4>
+<h4><?php _e('Your information'); ?><p class="small smallnote"><?php _e('(Please note that this information will be used only for HGF\'s internal purpose)'); ?></p></h4>
 
 <hr>
                 
 
+                <!--your First name last name   -->
                 <div class="form-group">
-                <label class="col-md-5 control-label" style="text-align:right;"><?php _e('Email Id'); ?></label>  
+                <label class="col-md-5 control-label" style="text-align:right;"><?php _e('First Name'); ?></label>  
                 <div class="col-md-7 inputGroupContainer">
                 <div class="input-group">
                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                <input name="" placeholder="Name" class="form-control" type="text" id="">
+                <input name="" placeholder="Name" class="form-control" type="text" id="medimitra_doctor_name">
                 </div>
                 </div>
                 </div>
 
                 <div class="form-group">
-                <label class="col-md-5 control-label" style="text-align:right;"><?php _e('Phone number'); ?></label>  
+                <label class="col-md-5 control-label" style="text-align:right;"><?php _e('Last Name'); ?></label>  
                 <div class="col-md-7 inputGroupContainer">
                 <div class="input-group">
                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                <input name="" placeholder="phone" class="form-control" type="text" id="">
+                <input name="" placeholder="Name" class="form-control" type="text" id="medimitra_doctor_name">
                 </div>
                 </div>
                 </div>
+                <!-- end -->
+
+
+<div class="form-group">
+  <label class="col-md-5 control-label" style="text-align:right;"><?php _e('Are you doctor ?'); ?></label> 
+    <div class="col-md-7 inputGroupContainer">
+    <div class="input-group">
+    <!-- <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span> -->
+    
+    <label class="radio-inline">
+    <input name="newsletter" value="1" type="radio" id="yesdoctor">
+    <?php _e('Yes'); ?>
+    </label>
+
+    <label class="radio-inline">
+    <input name="newsletter" value="0" checked="checked" type="radio" id="nodoctor">
+    <?php _e('No'); ?>
+    </label>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="form-group ifdoctor" id="degree">
+  <label class="col-md-5 control-label" style="text-align:right;"><?php _e('Your degree'); ?></label> 
+    <div class="col-md-7 inputGroupContainer">
+    <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input name="udegree" placeholder="Your degree" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+
+<!-- Text input-->
+       <div class="form-group ifdoctor">
+  <label class="col-md-5 control-label" style="text-align:right;"><?php _e('Place'); ?></label>  
+    <div class="col-md-7 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
+  <input name="uplace" placeholder="Place" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+
+
+
+<div class="form-group">
+  <label class="col-md-5 control-label" style="text-align:right;"><?php _e('Contact number'); ?></label> 
+    <div class="col-md-7 inputGroupContainer">
+    <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
+  <input name="number" placeholder="Your contact phone/mobile number" class="form-control"  type="text">
+    </div>  
+
+    <p class="small smallnote"><?php // _e('Please note that this information will be used only for HGF\'s internal purpose'); ?></p>
+
+  </div>
+</div>
+
+
+<div class="form-group">
+  <label class="col-md-5 control-label" style="text-align:right;"><?php _e('Email ID'); ?></label> 
+    <div class="col-md-7 inputGroupContainer">
+    <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+  <input name="number" placeholder="Your contact email id" class="form-control"  type="text">
+    </div>  
+
+    <p class="small smallnote"><?php  _e('Please note that this information will be used only for HGF\'s internal purpose'); ?></p>
+    
+
+  </div>
+</div>
+
+
+<div class="user_information">
+
+<h4>Please share the experience you have had with the doctor by selecting one of the options provided</h4> <hr class="big_dark">
+
+
+<div class="form-group">
+<label class="col-md-4 control-label">A) About overall level of satisfaction</label>
+    <div class="col-md-8 inputGroupContainer" >
+    <div class="input-group">
+    
+    <label class="radio-inline">
+    <input name="satisfaction" value="0" type="radio">
+    Very dissatisfied
+    </label>
+
+    <label class="radio-inline">
+    <input name="satisfaction" value="0" checked="checked" type="radio">
+    Dissatisfied
+    </label>
+
+    <label class="radio-inline">
+    <input name="satisfaction" value="0" checked="checked" type="radio">
+    Less satisfied
+    </label>
+
+    <label class="radio-inline">
+    <input name="satisfaction" value="0" checked="checked" type="radio">
+    Satisfied
+    </label>
+
+    <label class="radio-inline">
+    <input name="satisfaction" value="1" checked="checked" type="radio">
+    Very happy
+    </label>
+
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+<label class="col-md-4 control-label">B) About time given by the doctor</label>
+    <div class="col-md-8 inputGroupContainer">
+    <div class="input-group">
+    
+    <label class="radio-inline">
+    <input name="timegiven" value="0" type="radio">
+    Very dissatisfied
+    </label>
+
+    <label class="radio-inline">
+    <input name="timegiven" value="0" checked="checked" type="radio">
+    Dissatisfied
+    </label>
+
+    <label class="radio-inline">
+    <input name="timegiven" value="0" checked="checked" type="radio">
+    Less satisfied
+    </label>
+
+    <label class="radio-inline">
+    <input name="timegiven" value="0" checked="checked" type="radio">
+    Satisfied
+    </label>
+
+    <label class="radio-inline">
+    <input name="timegiven" value="1" checked="checked" type="radio">
+    Very happy
+    </label>
+
+    </div>
+  </div>
+</div>
+
+
+
+<div class="form-group">
+<label class="col-md-4 control-label">C) About doctor listening to you and answering your queries</label>
+    <div class="col-md-8 inputGroupContainer">
+    <div class="input-group">
+    
+    <label class="radio-inline">
+    <input name="listeninganswering" value="0" type="radio">
+    Very dissatisfied
+    </label>
+
+    <label class="radio-inline">
+    <input name="listeninganswering" value="0" checked="checked" type="radio">
+    Dissatisfied
+    </label>
+
+    <label class="radio-inline">
+    <input name="listeninganswering" value="0" checked="checked" type="radio">
+    Less satisfied
+    </label>
+
+    <label class="radio-inline">
+    <input name="listeninganswering" value="0" checked="checked" type="radio">
+    Satisfied
+    </label>
+
+    <label class="radio-inline">
+    <input name="listeninganswering" value="1" checked="checked" type="radio">
+    Very happy
+    </label>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="form-group">
+<label class="col-md-4 control-label">D) About information received from the doctor about illness and treatment</label>
+    <div class="col-md-8 inputGroupContainer">
+    <div class="input-group">
+    
+    <label class="radio-inline">
+    <input name="receivedinformation" value="0" type="radio">
+    Very dissatisfied
+    </label>
+
+    <label class="radio-inline">
+    <input name="receivedinformation" value="0" checked="checked" type="radio">
+    Dissatisfied
+    </label>
+
+    <label class="radio-inline">
+    <input name="receivedinformation" value="0" checked="checked" type="radio">
+    Less satisfied
+    </label>
+
+    <label class="radio-inline">
+    <input name="receivedinformation" value="0" checked="checked" type="radio">
+    Satisfied
+    </label>
+
+    <label class="radio-inline">
+    <input name="receivedinformation" value="1" checked="checked" type="radio">
+    Very happy
+    </label>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="form-group">
+<label class="col-md-4 control-label">E) Did the doctor insist on purchase of drugs from a particular store?</label>
+    <div class="col-md-8 inputGroupContainer">
+    <div class="input-group">
+    
+    <label class="radio-inline">
+    <input name="particularstore" value="0" type="radio">
+    Yes
+    </label>
+
+    <label class="radio-inline">
+    <input name="particularstore" value="1" checked="checked" type="radio">
+    No
+    </label>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- here -->
+
+<div class="form-group">
+<label class="col-md-4 control-label">Was any procedure done on you or were you admitted?</label>
+    <div class="col-md-8 inputGroupContainer">
+    <div class="input-group">
+    
+    <label class="radio-inline">
+    <input name="procedureadmission" value="0" type="radio" id="yesprocedureadmissiondone">
+    Yes
+    </label>
+
+    <label class="radio-inline">
+    <input name="procedureadmission" value="1" checked="checked" type="radio" id="noprocedureadmissiondone">
+    No
+    </label>
+
+    </div>
+  </div>
+</div>
+
+<div class="procedureadmissiondone">
+<div class="form-group">
+<label class="col-md-4 control-label"></label>
+    <div class="col-md-8 inputGroupContainer">
+    <div class="input-group">
+ If yes, please give feedback on the following :  
+    </div>
+  </div>
+</div>
+
+
+
+
+<hr class="big_darkgray">
+
+
+<div class="form-group">
+<label class="col-md-4 control-label">1. About accessibility of the main doctor</label>
+    <div class="col-md-8 inputGroupContainer">
+    <div class="input-group">
+    
+    <label class="radio-inline">
+    <input name="accessibility" value="0" type="radio">
+    Very dissatisfied
+    </label>
+
+    <label class="radio-inline">
+    <input name="accessibility" value="0" checked="checked" type="radio">
+    Dissatisfied
+    </label>
+
+    <label class="radio-inline">
+    <input name="accessibility" value="0" checked="checked" type="radio">
+    Less satisfied
+    </label>
+
+    <label class="radio-inline">
+    <input name="accessibility" value="0" checked="checked" type="radio">
+    Satisfied
+    </label>
+
+    <label class="radio-inline">
+    <input name="accessibility" value="1" checked="checked" type="radio">
+    Very happy
+    </label>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="form-group">
+<label class="col-md-4 control-label">2. About experience about the assistant doctors</label>
+    <div class="col-md-8 inputGroupContainer">
+    <div class="input-group">
+    
+    <label class="radio-inline">
+    <input name="assistantexperience" value="0" type="radio">
+    Very dissatisfied
+    </label>
+
+    <label class="radio-inline">
+    <input name="assistantexperience" value="0" checked="checked" type="radio">
+    Dissatisfied
+    </label>
+
+    <label class="radio-inline">
+    <input name="assistantexperience" value="0" checked="checked" type="radio">
+    Less satisfied
+    </label>
+
+    <label class="radio-inline">
+    <input name="assistantexperience" value="0" checked="checked" type="radio">
+    Satisfied
+    </label>
+
+    <label class="radio-inline">
+    <input name="assistantexperience" value="1" checked="checked" type="radio">
+    Very happy
+    </label>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="form-group">
+<label class="col-md-4 control-label">3. Experience about the nurses and other staff</label>
+    <div class="col-md-8 inputGroupContainer">
+    <div class="input-group">
+    
+    <label class="radio-inline">
+    <input name="nursesexperience" value="0" type="radio">
+    Very dissatisfied
+    </label>
+
+    <label class="radio-inline">
+    <input name="nursesexperience" value="0" checked="checked" type="radio">
+    Dissatisfied
+    </label>
+
+    <label class="radio-inline">
+    <input name="nursesexperience" value="0" checked="checked" type="radio">
+    Less satisfied
+    </label>
+
+    <label class="radio-inline">
+    <input name="nursesexperience" value="0" checked="checked" type="radio">
+    Satisfied
+    </label>
+
+    <label class="radio-inline">
+    <input name="nursesexperience" value="1" checked="checked" type="radio">
+    Very happy
+    </label>
+
+    </div>
+  </div>
+</div>
+
+
+
+<div class="form-group">
+<label class="col-md-4 control-label">4. About overall cleanliness</label>
+    <div class="col-md-8 inputGroupContainer">
+    <div class="input-group">
+    
+    <label class="radio-inline">
+    <input name="cleanliness" value="0" type="radio">
+    Very dissatisfied
+    </label>
+
+    <label class="radio-inline">
+    <input name="cleanliness" value="0" checked="checked" type="radio">
+    Dissatisfied
+    </label>
+
+    <label class="radio-inline">
+    <input name="cleanliness" value="0" checked="checked" type="radio">
+    Less satisfied
+    </label>
+
+    <label class="radio-inline">
+    <input name="cleanliness" value="0" checked="checked" type="radio">
+    Satisfied
+    </label>
+
+    <label class="radio-inline">
+    <input name="cleanliness" value="1" checked="checked" type="radio">
+    Very happy
+    </label>
+
+    </div>
+  </div>
+</div>
+
+
+
+<div class="form-group">
+<label class="col-md-4 control-label">5. About hospital charges</label>
+    <div class="col-md-8 inputGroupContainer">
+    <div class="input-group">
+    
+    <label class="radio-inline">
+    <input name="hospitalcharges" value="0" type="radio">
+    Very dissatisfied
+    </label>
+
+    <label class="radio-inline">
+    <input name="hospitalcharges" value="0" checked="checked" type="radio">
+    Dissatisfied
+    </label>
+
+    <label class="radio-inline">
+    <input name="hospitalcharges" value="0" checked="checked" type="radio">
+    Less satisfied
+    </label>
+
+    <label class="radio-inline">
+    <input name="hospitalcharges" value="0" checked="checked" type="radio">
+    Satisfied
+    </label>
+
+    <label class="radio-inline">
+    <input name="hospitalcharges" value="1" checked="checked" type="radio">
+    Very happy
+    </label>
+
+    </div>
+  </div>
+</div>
+
+
+</div> 
+</div> 
+
+
+<!-- here -->
+
+
+<!-- Success message -->
+<!-- <div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i> Thanks for contacting us, we will get back to you shortly.</div>
+ -->
+<!-- Button -->
+<br>
 
                     
                 <div class="col-md-5">
@@ -626,6 +1127,8 @@ function medimitra_doctor_form_fields() {
 
             </fieldset>
         </form>
+
+
     <?php
     return ob_get_clean();
 }
@@ -641,12 +1144,12 @@ function medimitra_add_new_member() {
         $doctor_experience   = $_POST["medimitra_doctor_experience"];
         $doctor_phone   = $_POST["medimitra_doctor_phone"];
         
-        $speciality_id = intval($_POST['medimitra_speciality']);
-        $specialities = (!empty($speciality_id) ? array($speciality_id) : array());
+        // $speciality_id = intval($_POST['medimitra_speciality']);
+        // $specialities = (!empty($speciality_id) ? array($speciality_id) : array());
 
 
-        $area_id = intval($_POST['medimitra_area']);
-        $areas = (!empty($area_id) ? array($area_id) : array());
+        // $area_id = intval($_POST['medimitra_area']);
+        // $areas = (!empty($area_id) ? array($area_id) : array());
 
 
  
@@ -675,12 +1178,19 @@ function medimitra_add_new_member() {
                     'post_title'        => $doctor_name,
                     'post_status'   => 'pending',
                     'post_type' => 'doctors',
-                    'post_date' => $_SESSION['cal_startdate'],
-                    'tax_input' =>  array('speciality'=>$specialities,'area'=>$areas),
+                    'post_date' => $_SESSION['cal_startdate']                    
                 )
             );
- //$pet_cat_term = $_POST['medimitra_speciality'];  
-// wp_set_post_terms( $post_id, $pet_cat_term, 'speciality' );
+            //'tax_input' =>  array('speciality'=>$specialities,'area'=>$areas),
+//$cat_term = $_POST['medimitra_speciality'];  
+      $speciality_id = intval($_POST['medimitra_speciality']);
+        $specialities = (!empty($speciality_id) ? array($speciality_id) : array());
+        wp_set_post_terms( $new_doctor_id, $specialities, 'speciality' );
+
+        $area_id = intval($_POST['medimitra_area']);
+        $areas = (!empty($area_id) ? array($area_id) : array());
+        wp_set_post_terms( $new_doctor_id, $areas, 'area' );
+
 
 
 if ( ! add_post_meta( $new_doctor_id, 'Education', $doctor_education, true ) ) { 
@@ -748,4 +1258,27 @@ function medimitra_show_error_messages() {
             }
         echo '</div>';
     }   
+}
+
+
+
+// doctor frontend form
+function medimitra_flashing_message() {
+ 
+        $output = medimitra_flashing_message_html();
+        return $output;
+}
+add_shortcode('doctor_flashing_message', 'medimitra_flashing_message');
+
+
+function medimitra_flashing_message_html(){
+ob_start(); ?>
+
+<p>“Dear doctors referred by patients, we congratulate you for being referred by patients to others. We request you to visit - <a href="http://www.ethicaldoctors.org/" target="_blank">http://www.ethicaldoctors.org/</a> and get registered yourself approving the declaration on behalf of Alliance of doctors for ethical healthcare, a national network of doctors committed for ethical and rational practice.
+
+With you getting registered at <a href="http://www.ethicaldoctors.org/" target="_blank">http://www.ethicaldoctors.org/</a>, the search result will display a star against your name to that effect.”</p>
+
+<?php 
+
+return ob_get_clean();
 }
