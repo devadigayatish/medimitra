@@ -530,7 +530,7 @@ function medimitra_doctor_form_fields() {
                 <div class="col-md-7 inputGroupContainer">
                 <div class="input-group">
                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                <input name="medimitra_doctor_name" placeholder="Name" class="form-control" type="text" id="medimitra_doctor_name">
+                <input name="medimitra_doctor_name" placeholder="First name" class="form-control" type="text" id="medimitra_doctor_name">
                 </div>
                 </div>
                 </div>
@@ -540,7 +540,7 @@ function medimitra_doctor_form_fields() {
                 <div class="col-md-7 inputGroupContainer">
                 <div class="input-group">
                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                <input name="medimitra_doctor_name" placeholder="Name" class="form-control" type="text" id="medimitra_doctor_name">
+                <input name="medimitra_doctor_name" placeholder="Last name" class="form-control" type="text" id="medimitra_doctor_name">
                 </div>
                 </div>
                 </div>
@@ -553,7 +553,7 @@ function medimitra_doctor_form_fields() {
                 <div class="col-md-7 inputGroupContainer">
                 <div class="input-group">
                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                <input name="medimitra_doctor_name" placeholder="Name" class="form-control" type="text" id="medimitra_doctor_name">
+                <input name="medimitra_doctor_name" placeholder="Address" class="form-control" type="text" id="medimitra_doctor_name">
                 </div>
                 </div>
                 </div>
@@ -617,7 +617,7 @@ function medimitra_doctor_form_fields() {
                 <hr>
 
 
-<h4><?php _e('Your information'); ?><p class="small smallnote"><?php _e('(Please note that this information will be used only for HGF\'s internal purpose)'); ?></p></h4>
+<h4><?php _e('Your information'); ?><p class="small smallnote"><?php _e('(Please note that this information will be used only for PCDF\'s internal purpose)'); ?></p></h4>
 
 <hr>
                 
@@ -628,7 +628,7 @@ function medimitra_doctor_form_fields() {
                 <div class="col-md-7 inputGroupContainer">
                 <div class="input-group">
                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                <input name="" placeholder="Name" class="form-control" type="text" id="medimitra_doctor_name">
+                <input name="" placeholder="First name" class="form-control" type="text" id="medimitra_doctor_name">
                 </div>
                 </div>
                 </div>
@@ -638,7 +638,7 @@ function medimitra_doctor_form_fields() {
                 <div class="col-md-7 inputGroupContainer">
                 <div class="input-group">
                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                <input name="" placeholder="Name" class="form-control" type="text" id="medimitra_doctor_name">
+                <input name="" placeholder="Last name" class="form-control" type="text" id="medimitra_doctor_name">
                 </div>
                 </div>
                 </div>
@@ -713,7 +713,7 @@ function medimitra_doctor_form_fields() {
   <input name="number" placeholder="Your contact email id" class="form-control"  type="text">
     </div>  
 
-    <p class="small smallnote"><?php  _e('Please note that this information will be used only for HGF\'s internal purpose'); ?></p>
+    <p class="small smallnote"><?php // _e('Please note that this information will be used only for HGF\'s internal purpose'); ?></p>
     
 
   </div>
@@ -726,8 +726,8 @@ function medimitra_doctor_form_fields() {
 
 
 <div class="form-group">
-<label class="col-md-4 control-label">A) About overall level of satisfaction</label>
-    <div class="col-md-8 inputGroupContainer" >
+<label class="col-md-12 control-label">A) About overall level of satisfaction</label>
+    <div class="col-md-12 inputGroupContainer" >
     <div class="input-group">
     
     <label class="radio-inline">
@@ -760,8 +760,8 @@ function medimitra_doctor_form_fields() {
 </div>
 
 <div class="form-group">
-<label class="col-md-4 control-label">B) About time given by the doctor</label>
-    <div class="col-md-8 inputGroupContainer">
+<label class="col-md-12 control-label">B) About time given by the doctor</label>
+    <div class="col-md-12 inputGroupContainer">
     <div class="input-group">
     
     <label class="radio-inline">
@@ -796,8 +796,8 @@ function medimitra_doctor_form_fields() {
 
 
 <div class="form-group">
-<label class="col-md-4 control-label">C) About doctor listening to you and answering your queries</label>
-    <div class="col-md-8 inputGroupContainer">
+<label class="col-md-12 control-label">C) About doctor listening to you and answering your queries</label>
+    <div class="col-md-12 inputGroupContainer">
     <div class="input-group">
     
     <label class="radio-inline">
@@ -831,8 +831,8 @@ function medimitra_doctor_form_fields() {
 
 
 <div class="form-group">
-<label class="col-md-4 control-label">D) About information received from the doctor about illness and treatment</label>
-    <div class="col-md-8 inputGroupContainer">
+<label class="col-md-12 control-label">D) About information received from the doctor about illness and treatment</label>
+    <div class="col-md-12 inputGroupContainer">
     <div class="input-group">
     
     <label class="radio-inline">
@@ -868,8 +868,8 @@ function medimitra_doctor_form_fields() {
 
 
 <div class="form-group">
-<label class="col-md-4 control-label">E) Did the doctor insist on purchase of drugs from a particular store?</label>
-    <div class="col-md-8 inputGroupContainer">
+<label class="col-md-12 control-label">E) Did the doctor insist on purchase of drugs from a particular store?</label>
+    <div class="col-md-12 inputGroupContainer">
     <div class="input-group">
     
     <label class="radio-inline">
@@ -890,8 +890,8 @@ function medimitra_doctor_form_fields() {
 <!-- here -->
 
 <div class="form-group">
-<label class="col-md-4 control-label">Was any procedure done on you or were you admitted?</label>
-    <div class="col-md-8 inputGroupContainer">
+<label class="col-md-12 control-label">Was any procedure done on you or were you admitted?</label>
+    <div class="col-md-12 inputGroupContainer">
     <div class="input-group">
     
     <label class="radio-inline">
@@ -910,8 +910,8 @@ function medimitra_doctor_form_fields() {
 
 <div class="procedureadmissiondone">
 <div class="form-group">
-<label class="col-md-4 control-label"></label>
-    <div class="col-md-8 inputGroupContainer">
+<label class="col-md-12 control-label"></label>
+    <div class="col-md-12 inputGroupContainer">
     <div class="input-group">
  If yes, please give feedback on the following :  
     </div>
@@ -925,8 +925,8 @@ function medimitra_doctor_form_fields() {
 
 
 <div class="form-group">
-<label class="col-md-4 control-label">1. About accessibility of the main doctor</label>
-    <div class="col-md-8 inputGroupContainer">
+<label class="col-md-12 control-label">1. About accessibility of the main doctor</label>
+    <div class="col-md-12 inputGroupContainer">
     <div class="input-group">
     
     <label class="radio-inline">
@@ -960,8 +960,8 @@ function medimitra_doctor_form_fields() {
 
 
 <div class="form-group">
-<label class="col-md-4 control-label">2. About experience about the assistant doctors</label>
-    <div class="col-md-8 inputGroupContainer">
+<label class="col-md-12 control-label">2. About experience about the assistant doctors</label>
+    <div class="col-md-12 inputGroupContainer">
     <div class="input-group">
     
     <label class="radio-inline">
@@ -997,8 +997,8 @@ function medimitra_doctor_form_fields() {
 
 
 <div class="form-group">
-<label class="col-md-4 control-label">3. Experience about the nurses and other staff</label>
-    <div class="col-md-8 inputGroupContainer">
+<label class="col-md-12 control-label">3. Experience about the nurses and other staff</label>
+    <div class="col-md-12 inputGroupContainer">
     <div class="input-group">
     
     <label class="radio-inline">
@@ -1033,8 +1033,8 @@ function medimitra_doctor_form_fields() {
 
 
 <div class="form-group">
-<label class="col-md-4 control-label">4. About overall cleanliness</label>
-    <div class="col-md-8 inputGroupContainer">
+<label class="col-md-12 control-label">4. About overall cleanliness</label>
+    <div class="col-md-12 inputGroupContainer">
     <div class="input-group">
     
     <label class="radio-inline">
@@ -1069,8 +1069,8 @@ function medimitra_doctor_form_fields() {
 
 
 <div class="form-group">
-<label class="col-md-4 control-label">5. About hospital charges</label>
-    <div class="col-md-8 inputGroupContainer">
+<label class="col-md-12 control-label">5. About hospital charges</label>
+    <div class="col-md-12 inputGroupContainer">
     <div class="input-group">
     
     <label class="radio-inline">
@@ -1104,6 +1104,7 @@ function medimitra_doctor_form_fields() {
 
 
 </div> 
+
 </div> 
 
 
@@ -1275,9 +1276,9 @@ function medimitra_flashing_message_html(){
 ob_start(); ?>
 <div class="panel-group">
 <div class="panel panel-default">
-<div class="panel-heading">Hello Doctors !!</div>
+<div class="panel-heading blink">Hello Doctors !!</div>
 <div class="panel-body">“Dear doctors referred by patients, we congratulate you for being referred by patients to others. We request you to visit - <a href="http://www.ethicaldoctors.org/" target="_blank">http://www.ethicaldoctors.org/</a> and get registered yourself approving the declaration on behalf of Alliance of doctors for ethical healthcare, a national network of doctors committed for ethical and rational practice.
-<p class="blink">
+<p>
 With you getting registered at <a href="http://www.ethicaldoctors.org/" target="_blank">http://www.ethicaldoctors.org/</a>, the search result will display a star against your name to that effect.”
 </p>
 </div>
