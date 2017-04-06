@@ -22,7 +22,7 @@ function satisfy_blog_loop ( $title = null, $custom_content = null ) {
 <?php if ( is_front_page() ) {?>
 <div class="panel-group">
 <div class="panel panel-default">
-<div class="panel-heading">Let's help each other find a good doctor! "</div>
+<div class="panel-heading">Let's help each other find a good doctor !!</div>
 <div class="panel-body">The Pune Citizen Doctor forum intends to rebuild trust amongst citizens and doctors. It also looks to promote ethical rational medical practice. You can find out more about the forum by clicking <a href="http://medimitra.org/?page_id=110" target>here</a>.
 
 Currently we are in the process of registering the forum and preparing the doctors' database. Once the forum is registered, citizens will be able to search for a doctor from this database.
