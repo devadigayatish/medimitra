@@ -119,13 +119,33 @@ jQuery(function ( $ ) {
 
         $('#yesprocedureadmissiondone').on( 'click', function () {
             $(".procedureadmissiondone").show();
+            $('#accessibility_of_main_doctor').attr('required', 'required');
+            $('#experience_about_assistant').attr('required', 'required');
+            $('#experience_about_nurses_and_other').attr('required', 'required');
+            $('#overall_cleanliness').attr('required', 'required');
+            $('#hospital_charges').attr('required', 'required');
+
         });
         $('#noprocedureadmissiondone').on( 'click', function () {
             $(".procedureadmissiondone").hide();
+            $('#accessibility_of_main_doctor').removeAttr('required');
+            $('#experience_about_assistant').removeAttr('required');
+            $('#experience_about_nurses_and_other').removeAttr('required');
+            $('#overall_cleanliness').removeAttr('required');
+            $('#hospital_charges').removeAttr('required');
+
         });
 
     $( '#disable-alert' ).on( 'click', function () {
         alert("Currently serach engine is disabled");
     });
+
+       $( '#medimitra_user_contact' ).on( 'blur', function () {
+         if ($('#medimitra_user_email').val()=='' && $('#medimitra_user_contact').val()=='') {
+        $(".alert_msg").show().delay(5000).fadeOut();
+    }
+    });  
+
+
         
 });

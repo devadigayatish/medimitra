@@ -1177,7 +1177,7 @@ if ( ! class_exists( 'SearchAndFilter' ) )
 						
 						$returnvar .=
 							'<input type="hidden" name="'.SF_FPRE.'submitted" value="1">
-							<input type="submit" value="'.$submitlabel.'">
+							<input type="submit" disabled="disabled" value="'.$submitlabel.'">
 						</li>';
 
 						$returnvar .= "</ul>";

@@ -557,15 +557,30 @@ function medimitra_doctor_form_fields() {
                 <div class="col-md-12">
 
                 <div class="col-md-6">
+
                 <div class="form-group">
                 <label class="col-md-3 control-label"><?php _e('Address'); ?><span>*</span></label>  
                 <div class="col-md-9 inputGroupContainer">
                 <div class="input-group">
                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                <textarea name="medimitra_doctor_address" placeholder="Enter address" class="form-control" rows="5" id="medimitra_doctor_address" required="true"></textarea>
+                <textarea name="medimitra_doctor_address" placeholder="Enter address" class="form-control" rows="4" id="medimitra_doctor_address" required="true"></textarea>
                 </div>
                 </div>
                 </div>
+
+                <div class="form-group">
+                <label class="col-md-3 control-label"><?php _e('Contact no.'); ?></label>  
+                <div class="col-md-9 inputGroupContainer">
+                <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                <input name="medimitra_doctor_contact_mobile" placeholder="10 digit mobile number" class="form-control" type="text" minlength="10" maxlength="10" id="medimitra_doctor_contact_mobile">
+                <input name="medimitra_doctor_contact_landline" placeholder="Landline number" class="form-control" type="text" id="medimitra_doctor_contact_landline">
+                </div>
+                </div>
+                </div>
+
+
+
                 </div>
 
                 <div class="col-md-6">
@@ -603,33 +618,27 @@ function medimitra_doctor_form_fields() {
                 <div class="input-group">
                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
 
-<select name="medimitra_doctor_area" id="medimitra_doctor_area" tabindex="9" required="true">
-<option value=""><?php _e('Select area'); ?></option>
+                <select name="medimitra_doctor_area" id="medimitra_doctor_area" tabindex="9" required="true">
+                <option value=""><?php _e('Select area'); ?></option>
 
-<?php
-$categories = get_terms('area', array('hide_empty' => 0));
-foreach ($categories as $category) {
-//print_r($categories);
-echo "<option id='medimitra_doctor_area' value='$category->term_id'>$category->name</option>";
-}
-?>
-</select>            
+                <?php
+                $categories = get_terms('area', array('hide_empty' => 0));
+                foreach ($categories as $category) {
+                //print_r($categories);
+                echo "<option id='medimitra_doctor_area' value='$category->term_id'>$category->name</option>";
+                }
+                ?>
+                <option id="medimitra_doctor_area" value="93">Other</option>
+                </select>            
                 <?php  //wp_dropdown_categories( 'tab_index=0&hide_empty=0&taxonomy=area&name=medimitra_doctor_area&class=medimitra_doctor_area&required=true&show_option_all=Select a Area' ); ?>
                 </div>
                 </div>
                 </div>
-                </div>
 
 
 
 
-                </div>
-
-
-
-                <div class="col-md-12">
-
-                    <div class="form-group col-md-6">
+                    <div class="form-group ">
                     <label class="col-md-3 control-label"><?php _e('Email Id'); ?></label>  
                     <div class="col-md-9 inputGroupContainer">
                     <div class="input-group">
@@ -641,28 +650,36 @@ echo "<option id='medimitra_doctor_area' value='$category->term_id'>$category->n
 
 
 
- 
-                    <div class="form-group col-md-6">
-                    <label class="col-md-3 control-label"><?php _e('Contact'); ?></label>  
-                    <div class="col-md-9 inputGroupContainer">
-                    <div class="input-group">
-                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                    <input name="medimitra_doctor_contact" placeholder="Enter Mobile or Landline number" class="form-control" type="text" id="medimitra_doctor_contact">
-                    </div>
-                    </div>
-                    </div>
+                </div>
+
+
+
 
                 </div>
 
 
 
-                <div class="col-md-12">
+               <div class="col-md-12">
                 <div class="form-group col-md-6">
-                <label class="col-md-3 control-label"><?php _e('Specialization'); ?></label>  
+                <label class="col-md-3 control-label"><?php _e('Specialization'); ?><span>*</span></label>  
                 <div class="col-md-9 inputGroupContainer">
                 <div class="input-group">
                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                <?php wp_dropdown_categories( 'tab_index=0&hide_empty=0&taxonomy=speciality&name=medimitra_doctor_speciality&class=medimitra_doctor_speciality&show_option_all=Select a Speciality' ); ?>
+                <?php //wp_dropdown_categories( 'tab_index=0&hide_empty=0&taxonomy=speciality&name=medimitra_doctor_speciality&class=medimitra_doctor_speciality&show_option_all=Select a Speciality' ); ?>
+                
+                <select name="medimitra_doctor_speciality" id="medimitra_doctor_speciality" tabindex="9" required="true">
+                <option value=""><?php _e('Select Speciality'); ?></option>
+
+                <?php
+                $categories = get_terms('speciality', array('hide_empty' => 0));
+                foreach ($categories as $category) {
+                //print_r($categories);
+                echo "<option id='medimitra_doctor_speciality' value='$category->term_id'>$category->name</option>";
+                }
+                ?>
+                
+                </select>
+                
                 </div>
                 </div>
                 </div>
@@ -733,11 +750,11 @@ echo "<option id='medimitra_doctor_area' value='$category->term_id'>$category->n
 
  
                     <div class="form-group col-md-6">
-                    <label class="col-md-3 control-label"><?php _e('Contact'); ?><span>*</span></label>  
+                    <label class="col-md-3 control-label"><?php _e('Contact'); ?></label>  
                     <div class="col-md-9 inputGroupContainer">
                     <div class="input-group">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                    <input name="medimitra_user_contact" placeholder="Enter your contact number" class="form-control" type="text" id="medimitra_user_contact" required="true">
+                    <input name="medimitra_user_contact" placeholder="Enter your contact number" class="form-control" type="text" id="medimitra_user_contact">
                     </div>
                     </div>
                     </div>
@@ -772,7 +789,7 @@ echo "<option id='medimitra_doctor_area' value='$category->term_id'>$category->n
 
 
 <div class="form-group">
-<label class="col-md-12 control-label">A) About overall level of satisfaction</label>
+<label class="col-md-12 control-label">A) About overall level of satisfaction<span>*</span></label>
     <div class="col-md-12 inputGroupContainer" >
     <div class="input-group">
     
@@ -788,7 +805,7 @@ echo "<option id='medimitra_doctor_area' value='$category->term_id'>$category->n
 
 
 <div class="form-group">
-<label class="col-md-12 control-label">B) About time given by the doctor</label>
+<label class="col-md-12 control-label">B) About time given by the doctor<span>*</span></label>
     <div class="col-md-12 inputGroupContainer" >
     <div class="input-group">
     
@@ -806,7 +823,7 @@ echo "<option id='medimitra_doctor_area' value='$category->term_id'>$category->n
 
 
 <div class="form-group">
-<label class="col-md-12 control-label">C) About doctor listening to you and answering your queries</label>
+<label class="col-md-12 control-label">C) About doctor listening to you and answering your queries<span>*</span></label>
     <div class="col-md-12 inputGroupContainer" >
     <div class="input-group">
     
@@ -823,7 +840,7 @@ echo "<option id='medimitra_doctor_area' value='$category->term_id'>$category->n
 
 
 <div class="form-group">
-<label class="col-md-12 control-label">D) About information received from the doctor about illness and treatment</label>
+<label class="col-md-12 control-label">D) About information received from the doctor about illness and treatment<span>*</span></label>
     <div class="col-md-12 inputGroupContainer" >
     <div class="input-group">
     
@@ -841,7 +858,7 @@ echo "<option id='medimitra_doctor_area' value='$category->term_id'>$category->n
 
 
 <div class="form-group">
-<label class="col-md-12 control-label">E) Did the doctor insist on purchase of drugs from a particular store?</label>
+<label class="col-md-12 control-label">E) Did the doctor insist on purchase of drugs from a particular store?<span>*</span></label>
     <div class="col-md-12 inputGroupContainer" >
     <div class="input-group">
     <label class="radio-inline"><input type="radio" value="1" name="doctor_insist_purchase_from_store" required>Yes</label>
@@ -852,7 +869,7 @@ echo "<option id='medimitra_doctor_area' value='$category->term_id'>$category->n
 
 
 <div class="form-group">
-<label class="col-md-12 control-label">F) Was any procedure done on you or were you admitted??</label>
+<label class="col-md-12 control-label">F) Was any procedure done on you or were you admitted?<span>*</span></label>
     <div class="col-md-12 inputGroupContainer" >
     <div class="input-group">
     <label class="radio-inline"><input type="radio" value="yes" name="procedure_done_on_you" id="yesprocedureadmissiondone" required>Yes</label>
@@ -866,11 +883,11 @@ echo "<option id='medimitra_doctor_area' value='$category->term_id'>$category->n
 If yes, please give feedback on the following :
 
 <div class="form-group">
-<label class="col-md-12 control-label">1. About accessibility of the main doctor</label>
+<label class="col-md-12 control-label">1. About accessibility of the main doctor<span>*</span></label>
     <div class="col-md-12 inputGroupContainer" >
     <div class="input-group">
     
-    <label class="radio-inline"><input type="radio" value="1" name="accessibility_of_main_doctor">Very dissatisfied</label>
+    <label class="radio-inline"><input type="radio" value="1" name="accessibility_of_main_doctor" id="accessibility_of_main_doctor">Very dissatisfied</label>
     <label class="radio-inline"><input type="radio" value="2" name="accessibility_of_main_doctor">Dissatisfied</label>
     <label class="radio-inline"><input type="radio" value="3" name="accessibility_of_main_doctor">Less satisfied</label>
     <label class="radio-inline"><input type="radio" value="4" name="accessibility_of_main_doctor">Satisfied</label>
@@ -883,11 +900,11 @@ If yes, please give feedback on the following :
 
 
 <div class="form-group">
-<label class="col-md-12 control-label">2. Experience about the assistant doctors</label>
+<label class="col-md-12 control-label">2. Experience about the assistant doctors<span>*</span></label>
     <div class="col-md-12 inputGroupContainer" >
     <div class="input-group">
     
-    <label class="radio-inline"><input type="radio" value="1" name="experience_about_assistant">Very dissatisfied</label>
+    <label class="radio-inline"><input type="radio" value="1" name="experience_about_assistant" id="experience_about_assistant">Very dissatisfied</label>
     <label class="radio-inline"><input type="radio" value="2" name="experience_about_assistant">Dissatisfied</label>
     <label class="radio-inline"><input type="radio" value="3" name="experience_about_assistant">Less satisfied</label>
     <label class="radio-inline"><input type="radio" value="4" name="experience_about_assistant">Satisfied</label>
@@ -902,11 +919,11 @@ If yes, please give feedback on the following :
 
 
 <div class="form-group">
-<label class="col-md-12 control-label">3. Experience about the nurses and other staff</label>
+<label class="col-md-12 control-label">3. Experience about the nurses and other staff<span>*</span></label>
     <div class="col-md-12 inputGroupContainer" >
     <div class="input-group">
     
-    <label class="radio-inline"><input type="radio" value="1" name="experience_about_nurses_and_other">Very dissatisfied</label>
+    <label class="radio-inline"><input type="radio" value="1" name="experience_about_nurses_and_other" id="experience_about_nurses_and_other">Very dissatisfied</label>
     <label class="radio-inline"><input type="radio" value="2" name="experience_about_nurses_and_other">Dissatisfied</label>
     <label class="radio-inline"><input type="radio" value="3" name="experience_about_nurses_and_other">Less satisfied</label>
     <label class="radio-inline"><input type="radio" value="4" name="experience_about_nurses_and_other">Satisfied</label>
@@ -919,11 +936,11 @@ If yes, please give feedback on the following :
 
 
 <div class="form-group">
-<label class="col-md-12 control-label">4. About overall cleanliness</label>
+<label class="col-md-12 control-label">4. About overall cleanliness<span>*</span></label>
     <div class="col-md-12 inputGroupContainer" >
     <div class="input-group">
     
-    <label class="radio-inline"><input type="radio" value="1" name="overall_cleanliness">Very dissatisfied</label>
+    <label class="radio-inline"><input type="radio" value="1" name="overall_cleanliness" id="overall_cleanliness">Very dissatisfied</label>
     <label class="radio-inline"><input type="radio" value="2" name="overall_cleanliness">Dissatisfied</label>
     <label class="radio-inline"><input type="radio" value="3" name="overall_cleanliness">Less satisfied</label>
     <label class="radio-inline"><input type="radio" value="4" name="overall_cleanliness">Satisfied</label>
@@ -935,11 +952,11 @@ If yes, please give feedback on the following :
 
 
 <div class="form-group">
-<label class="col-md-12 control-label">5. About hospital charges</label>
+<label class="col-md-12 control-label">5. About hospital charges<span>*</span></label>
     <div class="col-md-12 inputGroupContainer" >
     <div class="input-group">
     
-    <label class="radio-inline"><input type="radio" value="1" name="hospital_charges">Very dissatisfied</label>
+    <label class="radio-inline"><input type="radio" value="1" name="hospital_charges" id="hospital_charges">Very dissatisfied</label>
     <label class="radio-inline"><input type="radio" value="2" name="hospital_charges">Dissatisfied</label>
     <label class="radio-inline"><input type="radio" value="3" name="hospital_charges">Less satisfied</label>
     <label class="radio-inline"><input type="radio" value="4" name="hospital_charges">Satisfied</label>
@@ -987,8 +1004,21 @@ function medimitra_add_new_member() {
         $doctor_city            = $_POST["medimitra_doctor_city"];
         $doctor_area            = $_POST["medimitra_doctor_area"];
         $doctor_email           = $_POST["medimitra_doctor_email"];    
-        $doctor_contact         = $_POST["medimitra_doctor_contact"];    
+        $doctor_contact_mobile      = $_POST["medimitra_doctor_contact_mobile"];    
+        $doctor_contact_landline    = $_POST["medimitra_doctor_contact_landline"];    
         $doctor_qualification   = $_POST["medimitra_doctor_qualification"];
+
+
+        $user_firstname      = $_POST["medimitra_user_firstname"];
+        $user_lastname       = $_POST["medimitra_user_lastname"];
+        $user_email          = $_POST["medimitra_user_email"];
+        $user_contact       = $_POST["medimitra_user_contact"];
+        if(isset($_POST["medimitra_news_update"]))
+            $user_news_update   = $_POST["medimitra_news_update"];
+        else
+            $user_news_update   = 0;
+
+
 
 
         $fb_overall_level_of_satisfaction   = $_POST["overall_level_of_satisfaction"];
@@ -997,43 +1027,39 @@ function medimitra_add_new_member() {
         $fb_information_received_from_doctor   = $_POST["information_received_from_doctor"];
         $fb_doctor_insist_purchase_from_store   = $_POST["doctor_insist_purchase_from_store"];
         $fb_procedure_done_on_you   = $_POST["procedure_done_on_you"];
-        
-
-if(isset($_POST["accessibility_of_main_doctor"])) 
-        $fb_accessibility_of_main_doctor   = $_POST["accessibility_of_main_doctor"];
-    else
-        $fb_accessibility_of_main_doctor = '';
-
-if(isset($_POST["experience_about_assistant"])) 
-        $fb_experience_about_assistant   = $_POST["experience_about_assistant"];
-    else
-        $fb_experience_about_assistant = '';
-
-if(isset($_POST["experience_about_nurses_and_other"])) 
-        $fb_experience_about_nurses_and_other   = $_POST["experience_about_nurses_and_other"];
-    else
-        $fb_experience_about_nurses_and_other = '';
-
-if(isset($_POST["overall_cleanliness"])) 
-        $fb_overall_cleanliness   = $_POST["overall_cleanliness"];
-    else
-        $fb_overall_cleanliness = '';
-
-if(isset($_POST["hospital_charges"])) 
-        $fb_hospital_charges   = $_POST["hospital_charges"];
-    else
-        $fb_hospital_charges = '';
-
-        $fb_medimitra_user_comment   = $_POST["medimitra_user_comment"];
 
 
-   
 
-        if(($fb_procedure_done_on_you == 'yes') && ( $fb_accessibility_of_main_doctor == '' || $fb_experience_about_assistant == '' || $fb_experience_about_nurses_and_other == '' || $fb_overall_cleanliness == '' || $fb_overall_cleanliness == '')) {
-            medimitra_errors()->add('accessibility_of_main_doctor', __('All the questions for procedure done are compulsory'));
-        }
+if(isset($_POST["accessibility_of_main_doctor"]))
+            $fb_accessibility_of_main_doctor   = $_POST["accessibility_of_main_doctor"];
+        else
+            $fb_accessibility_of_main_doctor   = 0;
 
 
+if(isset($_POST["experience_about_assistant"]))
+            $fb_experience_about_assistant   = $_POST["experience_about_assistant"];
+        else
+            $fb_experience_about_assistant   = 0;
+
+
+if(isset($_POST["experience_about_nurses_and_other"]))
+            $fb_experience_about_nurses_and_other   = $_POST["experience_about_nurses_and_other"];
+        else
+            $fb_experience_about_nurses_and_other   = 0;
+
+
+if(isset($_POST["overall_cleanliness"]))
+            $fb_overall_cleanliness   = $_POST["overall_cleanliness"];
+        else
+            $fb_overall_cleanliness   = 0;
+
+if(isset($_POST["hospital_charges"]))
+            $fb_hospital_charges   = $_POST["hospital_charges"];
+        else
+            $fb_hospital_charges   = 0;
+
+
+        $fb_medimitra_user_comment   = $_POST["medimitra_user_comment"];    
 
         // if(!is_email($user_email)) {
         //  //invalid email
@@ -1088,19 +1114,18 @@ if(isset($_POST["hospital_charges"]))
             if ( ! add_post_meta( $new_doctor_id, 'doctor_email', $doctor_email, true ) ) { 
             update_post_meta( $new_doctor_id, 'doctor_email', $doctor_email );
             }
-            if ( ! add_post_meta( $new_doctor_id, 'doctor_contact', $doctor_contact, true ) ) { 
-            update_post_meta( $new_doctor_id, 'doctor_contact', $doctor_contact );
+            if ( ! add_post_meta( $new_doctor_id, 'doctor_contact_mobile', $doctor_contact_mobile, true ) ) { 
+            update_post_meta( $new_doctor_id, 'doctor_contact_mobile', $doctor_contact_mobile );
+            }
+            if ( ! add_post_meta( $new_doctor_id, 'doctor_contact_landline', $doctor_contact_landline, true ) ) { 
+            update_post_meta( $new_doctor_id, 'doctor_contact_landline', $doctor_contact_landline );
             }
             if ( ! add_post_meta( $new_doctor_id, 'qualification', $doctor_qualification, true ) ) { 
             update_post_meta( $new_doctor_id, 'qualification', $doctor_qualification );
             }
 
 
-            $user_firstname      = $_POST["medimitra_user_firstname"];
-            $user_lastname       = $_POST["medimitra_user_lastname"];
-            $user_email          = $_POST["medimitra_user_email"];
-            $user_contact       = $_POST["medimitra_user_contact"];
-            $user_news_update   = $_POST["medimitra_news_update"];
+
 
 
 
@@ -1157,7 +1182,6 @@ else{
 
             if($new_doctor_id && $new_feedback_id) {
              $url = get_permalink( '140' );
-            // print($url);
              wp_redirect($url);exit();
              
                 // send an email to the admin alerting them of the registration
@@ -1204,23 +1228,6 @@ add_action('init', 'medimitra_add_new_member');
 //         }
 //     }
 // }
-// function __update_post_meta( $post_id, $field_name, $value = 'true' )
-// {
-//     if ( empty( $value ) OR ! $value )
-//     {
-//         delete_post_meta( $post_id, $field_name );
-//     }
-//     elseif ( ! get_post_meta( $post_id, $field_name ) )
-//     {
-//         add_post_meta( $post_id, $field_name, $value );
-//     }
-//     else
-//     {
-//         update_post_meta( $post_id, $field_name, $value );
-//     }
-// }
-
-
 
 // used for tracking error messages
 function medimitra_errors(){
@@ -1257,9 +1264,9 @@ ob_start(); ?>
 <div class="panel-group">
 <div class="panel panel-default">
 <div class="panel-heading blink">Hello Doctors !!</div>
-<div class="panel-body">“Dear doctors referred by patients, we congratulate you for being referred by patients to others. We request you to visit - <a href="http://www.ethicaldoctors.org/" target="_blank">http://www.ethicaldoctors.org/</a> and get registered yourself approving the declaration on behalf of Alliance of doctors for ethical healthcare, a national network of doctors committed for ethical and rational practice.
+<div class="panel-body">Dear doctors referred by patients, we congratulate you for being referred by patients to others. We request you to visit - <a href="http://www.ethicaldoctors.org/" target="_blank">http://www.ethicaldoctors.org/</a> and get registered yourself approving the declaration on behalf of Alliance of Doctors for Ethical Healthcare (ADEH), a national network of doctors committed for ethical and rational practice.
 <p>
-With you getting registered at <a href="http://www.ethicaldoctors.org/" target="_blank">http://www.ethicaldoctors.org/</a>, the search result will display membership status against your name to that effect.”
+With you getting registered at <a href="http://www.ethicaldoctors.org/" target="_blank">http://www.ethicaldoctors.org/</a>, the search result will display membership status against your name to that effect.
 </p>
 </div>
 </div>
