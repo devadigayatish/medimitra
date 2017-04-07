@@ -1263,7 +1263,7 @@ function medimitra_flashing_message_html(){
 ob_start(); ?>
 <div class="panel-group">
 <div class="panel panel-default">
-<div class="panel-heading blink">Hello Doctors !!</div>
+<div class="panel-heading blink"><strong>Hello Doctors !!</strong></div>
 <div class="panel-body">Dear doctors referred by patients, we congratulate you for being referred by patients to others. We request you to visit - <a href="http://www.ethicaldoctors.org/" target="_blank">http://www.ethicaldoctors.org/</a> and get registered yourself approving the declaration on behalf of Alliance of Doctors for Ethical Healthcare (ADEH), a national network of doctors committed for ethical and rational practice.
 <p>
 With you getting registered at <a href="http://www.ethicaldoctors.org/" target="_blank">http://www.ethicaldoctors.org/</a>, the search result will display membership status against your name to that effect.
