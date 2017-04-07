@@ -361,7 +361,7 @@ function satisfy_welcome_message () {
 // Footer bottom credit text
 function satisfy_footer_bottom_info () {
     if ( apply_filters( 'satisfy_footer_info', true ) ) {
-        printf( '<p>%s Satisfy</p>', __( 'Theme', 'satisfy' ) );
+        printf( '<p><i>POWERED BY</i> &nbsp;&nbsp; <a href="http://startuppartner.co.in" target="_blank">Startup Partner</a></p>' );
     }
 }
 
