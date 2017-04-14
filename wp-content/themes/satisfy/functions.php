@@ -997,6 +997,8 @@ function medimitra_add_new_member() {
 
     if (isset( $_POST["medimitra_doctor_firstname"] ) && wp_verify_nonce($_POST['medimitra_register_nonce'], 'medimitra-register-nonce')) {
 
+
+
         $doctor_firstname       = $_POST["medimitra_doctor_firstname"];
         $doctor_lastname        = $_POST["medimitra_doctor_lastname"];
         $doctor_address         = $_POST["medimitra_doctor_address"];    
@@ -1028,6 +1030,7 @@ function medimitra_add_new_member() {
         $fb_doctor_insist_purchase_from_store   = $_POST["doctor_insist_purchase_from_store"];
         $fb_procedure_done_on_you   = $_POST["procedure_done_on_you"];
 
+        //$total_number_of_feedback=0;
 
 
 if(isset($_POST["accessibility_of_main_doctor"]))
@@ -1059,7 +1062,9 @@ if(isset($_POST["hospital_charges"]))
             $fb_hospital_charges   = 0;
 
 
-        $fb_medimitra_user_comment   = $_POST["medimitra_user_comment"];    
+$fb_medimitra_user_comment   = $_POST["medimitra_user_comment"];    
+
+
 
         // if(!is_email($user_email)) {
         //  //invalid email
@@ -1076,8 +1081,51 @@ if(isset($_POST["hospital_charges"]))
 
         //custom fields 
 
+        // $table_name = $wpdb->prefix . '';
+        // $results = $wpdb->get_results( $wpdb->prepare('SELECT * FROM '.$table_name ) );
+$speciality_id = intval($_POST['medimitra_doctor_speciality']);
+$area_id = intval($_POST['medimitra_doctor_area']);
+
+$posts = get_posts(array(
+    'numberposts'   => 1,
+    'post_type'     => 'doctors',
+    'post_status' => array('publish', 'pending'),
+    'tax_query' => array(
+            array(
+                'taxonomy' => 'speciality',
+                'field' => 'term_id',
+                'terms' => $speciality_id,
+            ),
+            array(
+                'taxonomy' => 'area',
+                'field' => 'term_id',
+                'terms' => $area_id,
+            )
+        ),
+    'meta_query'    => array(
+        'relation'      => 'AND',
+        array(
+            'key'       => 'doctor_first_name',
+            'value'     => $doctor_firstname,
+            'compare'   => '=',
+        ),
+        array(
+            'key'       => 'doctor_last_name',
+            'value'     => $doctor_lastname,
+            'compare'   => '=',
+        )
+    ),
+));
+
+
+
+
+
         if(empty($errors)) {
  
+
+ //new doctor
+            if(!$posts){ 
             $new_doctor_id = wp_insert_post(array(
                     'post_title'        => $doctor_firstname." ".$doctor_lastname,
                     'post_status'   => 'pending',
@@ -1123,14 +1171,31 @@ if(isset($_POST["hospital_charges"]))
             if ( ! add_post_meta( $new_doctor_id, 'qualification', $doctor_qualification, true ) ) { 
             update_post_meta( $new_doctor_id, 'qualification', $doctor_qualification );
             }
+            if ( ! add_post_meta( $new_doctor_id, 'total_number_of_feedback', 0, true ) ) { 
+            update_post_meta( $new_doctor_id, 'total_number_of_feedback', 0 );
+            }
+            if ( ! add_post_meta( $new_doctor_id, 'total_feedback_score', 0, true ) ) { 
+            update_post_meta( $new_doctor_id, 'total_feedback_score', 0 );
+            }
+        }
+        else {
+            $new_doctor_id=$posts[0]->ID;
+        }
 
 
+global $wpdb;
+//if existing user
+$query = "SELECT medimitra_user_id FROM ".$wpdb->prefix."medimitra_user WHERE medimitra_user_email='$user_email'";
+$existing_user_id = $wpdb->get_var($query);
 
 
+if($posts && $existing_user_id){ 
+$url = get_permalink( '425' );
+wp_redirect($url);exit();
+}
 
-
-            global $wpdb;
-            $insert_query=$wpdb->insert( 
+            if($existing_user_id=='') { 
+                $insert_query=$wpdb->insert( 
                                     'wp_medimitra_user', 
                                     array( 
                                     'medimitra_user_firstname' => $user_firstname, 
@@ -1143,6 +1208,10 @@ if(isset($_POST["hospital_charges"]))
                                     
             );
             $new_user_id = $wpdb->insert_id;
+        }
+        else {
+         $new_user_id = $existing_user_id; 
+        }
 
 $feedback_score=0;
 if($fb_procedure_done_on_you=='yes'){
@@ -1176,9 +1245,17 @@ else{
                                     
             );
 
- if ( ! add_post_meta( $new_doctor_id, 'average_score', $feedback_score, true ) ) { 
-            update_post_meta( $new_doctor_id, 'average_score', $feedback_score );
-}
+             $existing_value_total_number_of_feedback =  get_post_meta( $new_doctor_id, 'total_number_of_feedback', true );
+             $existing_value_total_feedback_score =  get_post_meta( $new_doctor_id, 'total_feedback_score', true );
+
+
+            if ( ! add_post_meta( $new_doctor_id, 'total_number_of_feedback', $existing_value_total_number_of_feedback+1, true ) ) { 
+            update_post_meta( $new_doctor_id, 'total_number_of_feedback', $existing_value_total_number_of_feedback+1 );
+            }
+            if ( ! add_post_meta( $new_doctor_id, 'total_feedback_score', $existing_value_total_feedback_score+$feedback_score, true ) ) { 
+            update_post_meta( $new_doctor_id, 'total_feedback_score', $existing_value_total_feedback_score+$feedback_score );
+            }
+
 
             if($new_doctor_id && $new_feedback_id) {
              $url = get_permalink( '140' );
