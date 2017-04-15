@@ -37,7 +37,8 @@ If you have had a 'great' experience with a doctor, you can contribute to this d
 <div class="well">
 <?php echo do_shortcode( '[searchandfilter fields="search,speciality,area" post_types="doctors"]' );?>
 </div>
-<?php }?>
+<?php }
+else { // temporary change to not show post on home page if they are published?>
 
 
 
@@ -218,6 +219,7 @@ if( 1 ) {
             <?php } ?>
 
         </div>
+        <?php } //temporary change to not show post on home page if they are puslished ?>
     </div><!-- primary-content -->
 
     <?php if ( ! $sidebar ) { // sidebar to the right (default)

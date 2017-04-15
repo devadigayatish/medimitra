@@ -1190,7 +1190,7 @@ $existing_user_id = $wpdb->get_var($query);
 
 
 if($posts && $existing_user_id){ 
-$url = get_permalink( '425' );
+$url = get_permalink( '256' );
 wp_redirect($url);exit();
 }
 
